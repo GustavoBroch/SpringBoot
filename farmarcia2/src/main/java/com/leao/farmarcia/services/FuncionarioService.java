@@ -23,11 +23,11 @@ public class FuncionarioService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		Optional<Funcionario> funcionarioPresente = repository.findByEmail(funcionario.getEmail()); 
-		
+		//Alteração Marcelo - if
 		if(funcionarioPresente.isPresent()) {
 			return null;
 		}
-		
+
 		String senhaEncoder = encoder.encode(funcionario.getPassword());
 		funcionario.setPassword(senhaEncoder);
 

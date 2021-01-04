@@ -29,8 +29,9 @@ public class FuncionarioController {
 	}
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Funcionario> Post(@RequestBody Funcionario funcionario){
+		//Alteração Marcelo - Funcionario
 		Funcionario func = funcionarioService.CadastrarFuncionario(funcionario);
-		
+		//Alteração Marcelo If até o último return.
 		if(func == null) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
